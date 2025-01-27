@@ -72,3 +72,22 @@ class LoginView(APIView):
             })
         else:
             return Response({'message': 'Invalid credentials'}, status=401)
+        
+
+
+from rest_framework.parsers import MultiPartParser, FormParser
+from cloudinary.uploader import upload
+
+class ImageUploadView(APIView):
+    parser_classes = (MultiPartParser, FormParser)
+
+    def post(self, request):
+        image = request.FILES.get('image')
+        if image:
+            upload_result = upload(image)
+            
+            image_url = upload_result.get('url')
+            
+            return Response({"image_url": image_url}, status=status.HTTP_200_OK)
+        
+        return Response({"error": "No image provided."}, status=status.HTTP_400_BAD_REQUEST)

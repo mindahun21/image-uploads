@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Upload</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="upload-container">
+      <h2>Upload Your Image</h2>
+      <form id="uploadForm">
+        <label for="image" class="upload-label">Choose Image</label>
+        <input type="file" id="image" name="image" accept="image/*" />
+        <button type="submit" class="upload-button">Upload</button>
+      </form>
+      <div class="preview-container" id="previewContainer"></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
