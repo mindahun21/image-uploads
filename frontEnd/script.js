@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (response.ok) {
         const data = await response.json();
         alert('Image uploaded successfully!');
-        displayImage(data.image_url); // Replace with the key your API responds with
+        displayImage(data.image_url); 
       } else {
         alert('Failed to upload image. Please try again.');
       }
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Display the uploaded image preview
+  
   function displayImage(imageUrl) {
     const img = document.createElement('img');
     const link = document.createElement('a');
